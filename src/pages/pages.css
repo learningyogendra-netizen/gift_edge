@@ -1,0 +1,18 @@
+/* Page Styles */
+.page {
+    padding: 80px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-gold);
+}
+
+.page p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-gray-light);
+}

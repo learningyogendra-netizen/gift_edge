@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 
+public/GiftEdge Website redesign
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
