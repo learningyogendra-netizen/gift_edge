@@ -5,7 +5,9 @@ import Footer from './components/footer/Footer';
 import Home from './pages/Home';
 import Collection from './pages/Collection';
 import AboutUs from './pages/AboutUs';
-import ContactUs from './pages/ContactUs';
+import { ContactUs } from './pages/ContactUs';
+import ProductDetail from './pages/ProductDetail';
+
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/collection" element={<Collection />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>

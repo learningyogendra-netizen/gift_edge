@@ -1,0 +1,155 @@
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 0 5%;
+}
+
+/* Common Card Style */
+.contact-form-section,
+.contact-details-section {
+    background-color: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    color: #E2B94B;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: #262626;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 1rem;
+    color: #FFF;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #E2B94B;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #E2B94B;
+    color: #1A1A1A;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #C5A040;
+}
+
+/* Contact Details Styles */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.icon-box {
+    background-color: #333333;
+    color: #E2B94B;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.info-content h3 {
+    color: #FFF;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.info-content p {
+    color: #CCC;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.printing_service{
+        background: linear-gradient(
+  to right,
+  #BA9652 0%,
+  #E8D392 26%,
+  #C2A05C 44%,
+  #D7BA81 64%,
+  #C2A05C 84%,
+  #B28D48 100%
+);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        padding: 2rem 1rem;
+    }
+
+    .contact-form-section,
+    .contact-details-section {
+        padding: 1.5rem;
+    }
+}

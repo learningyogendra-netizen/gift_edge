@@ -170,4 +170,5 @@ p{
 body {
   font-family: var(--font-primary);
   background-color: var(--color-black-primary);
+  color: var(--bg-white);
 }

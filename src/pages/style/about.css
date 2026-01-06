@@ -1,0 +1,75 @@
+.about_us {
+    padding: 5% 0%;
+}
+
+.about_us_banner {
+    text-align: center;
+}
+
+.about_us_story{
+    padding: 0 5%;
+}
+.about_us_story h3{
+    text-align: center;
+}
+.about_us_story_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about_us_story_content_text{
+    width: 50%;
+}
+.about_us_story_content_img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_us_story_content_img img{
+    width: 80%;
+}
+
+/* 2c281c */
+
+.about_us_why_choose_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about_us_why_choose_content_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about_us_why_choose_content_item div{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2c281c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_achivement{
+    padding: 5% 5%;
+    background: linear-gradient(
+  to right,
+  #BA9652 0%,
+  #E8D392 26%,
+  #C2A05C 44%,
+  #D7BA81 64%,
+  #C2A05C 84%,
+  #B28D48 100%
+);
+
+}
+
+.about_achivement_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
