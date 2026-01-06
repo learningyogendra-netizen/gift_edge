@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import Home from './pages/Home';
 import Collection from './pages/Collection';
 import AboutUs from './pages/AboutUs';
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
