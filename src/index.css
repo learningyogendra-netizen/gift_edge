@@ -14,6 +14,16 @@
       #FFD700 50%,
       #FFA500 120.71%);
 
+  --bg-gold-metallic: linear-gradient(
+    to right,
+    #BA9652 0%,
+    #E8D392 20%,
+    #C2A05C 40%,
+    #D7BA81 60%,
+    #C2A05C 80%,
+    #B28D48 100%
+  );
+
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Montserrat', sans-serif;
 
