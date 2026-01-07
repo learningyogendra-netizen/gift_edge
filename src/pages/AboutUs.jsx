@@ -53,17 +53,17 @@ export default function AboutUs() {
         <div className="about_achivement">
           <div className="about_achivement_content">
             <div>
-              <img src="/assets/about/achivement.png" alt="" />
+              <img src="/assets/about/gift.png" alt="" />
               <p>20,000+</p>
               <span>Gift Deliveried</span>
             </div>
             <div>
-              <img src="" alt="" />
+              <img src="/assets/about/client.png" alt="" />
               <p>500+</p>
               <span>Corporate Clients</span>
             </div>
             <div>
-              <img src="" alt="" />
+              <img src="/assets/about/star.png" alt="" />
               <p>8+</p>
               <span>Years of Excellence</span>
             </div>

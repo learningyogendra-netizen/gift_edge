@@ -148,13 +148,32 @@
     border-color: var(--color-gold-primary);
 }
 
-.about_us_why_choose_content_item div {
+/* .about_us_why_choose_content_item div {
     width: 60px;
     height: 60px;
     margin: 0 auto 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.about_us_why_choose_content_item div {
+    background-color: color-mix(in srgb, var(--color-gold-primary), transparent 70%);    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about_us_why_choose_content_item div img {
+    width: 30px; 
+    height: auto;
+    align-items: center;
+    display: block; 
 }
 
 .about_us_why_choose_content_item h4 {
@@ -175,10 +194,14 @@
     text-align: center;
 }
 
+.about_achivement_content div img {
+    height: 50px;
+    width: 50px;
+}
+
 .about_achivement_content p {
     font-size: 2.5rem;
     font-weight: 800;
-    margin: 10px 0 5px;
 }
 
 .about_achivement_content span {
