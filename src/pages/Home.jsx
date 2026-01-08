@@ -370,32 +370,31 @@ export default function Home() {
         <div className="underline"></div>
 
         <div className="testimonial-wrapper">
-          <button className="nav-btn left" onClick={prevTestimonial}>‹</button>
+            <button className="nav-btn left" onClick={prevTestimonial}>‹</button>
 
-          <div className="testimonial-cards">
-            {visibleClientReviews.map((review) => (
-              <div className="testimonial-card" key={review.id}>
-                <div className="video-box">
-                  <img src={review.clientImage} alt="Client" />
-                  <span className="client-playBtn"></span>
-                </div>
+            <div className="testimonial-viewport">
+              <div className="testimonial-cards">
+                {visibleClientReviews.map((review) => (
+                  <div className="testimonial-card" key={review.id}>
+                    <div className="video-box">
+                      <img src={review.clientImage} alt="Client" />
+                      <span className="client-playBtn"></span>
+                    </div>
 
-                <div className="card-content">
-                  <div className="client-info">
-                    <img src={review.avatarImage} alt='Avatar' />
-                    <div>
-                      <h4>{review.name}</h4>
-                      <p>{review.desgnation}</p>
+                    <div className="card-content">
+                      <div className="client-info">
+                        <img src={review.avatarImage} alt="Avatar" />
+                        <div>
+                          <h4>{review.name}</h4>
+                          <p>{review.desgnation}</p>
+                        </div>
+                      </div>
+                      <p className="quote">{review.quote}</p>
                     </div>
                   </div>
-                  <p className="quote">
-                    {review.quote}
-                  </p>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-
+            </div>
           <button className="nav-btn right" onClick={nextTestimonial}>›</button>
         </div>
       </section>
