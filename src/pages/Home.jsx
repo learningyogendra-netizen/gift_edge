@@ -45,11 +45,6 @@ const OURWORKS = [
     title: "Custom Branded Festive Hampers",
     image: '/assets/home/hero.png'
   },
-  {
-    id: 4,
-    title: "Custom Branded Festive Hampers",
-    image: '/assets/home/hero.png'
-  }
 ]
 
 const CLIENTREVIEWS = [
@@ -163,9 +158,8 @@ export default function Home() {
       <section className="categories-section">
         <span><img src="/assets/home/category_dots.png" alt="" className='categories-section-left-image' /></span>
         <span><img src="/assets/home/category_blob.png" alt="" className='categories-section-image' /></span>
-        <div className="section-header">
+        <div>
           <h1 className="section-title">Premium Gifting Categories</h1>
-          <span></span>
         </div>
 
         
