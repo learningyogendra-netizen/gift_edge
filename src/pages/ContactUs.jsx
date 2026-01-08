@@ -12,47 +12,45 @@ export const ContactUs = () => {
     <div className="contact-container">
       {/* Header */}
       <div className="contact-header">
-        <h1>Send Us Your Inquiry</h1>
+        <img src="/assets/home/category_dots.png" alt="" className="contact-bg-dots" />
+        <img src="public/assets/contact/header_top_right.png" alt="" className="contact-bg-blob-top" />
+        <img src="public/assets/about/header_bottom_image.png" alt="" className="contact-bg-header-left" />
+        <img src="public/assets/contact/header_triangle_image.png" alt="" className="contact-bg-shape-left" />
+        <img src="public/assets/contact/header_bottom_right.png" alt="" className="contact-bg-bottom-right" />
+        
+        <h1>We're Here to Assist You</h1>
+        <div className="header-line"></div>
         <p>Connect with our team for inquiries, custom gifting, or bulk orders.</p>
       </div>
 
       {/* Content */}
       <div className="contact-content">
-        {/* Left: Form */}
-        <div className="contact-form-section">
+        {/* Left: Form Card */}
+        <img src="/assets/contact/query_center_image.png" alt="" className="contact-query-bottom-right" />
+        <img src="/assets/contact/query_bottom_right_image.png" alt="" className="contact-query-right" />
+        <div className="contact-card contact-form-section">
           <h2 className="section-title">Send Us Your Inquiry</h2>
-
           <form className="contact-form">
             <div className="form-row">
-              <div className="form-group">
-                <input type="text" placeholder="Full Name" required />
-              </div>
-              <div className="form-group">
-                <input type="text" placeholder="Company Name" />
-              </div>
+              <input type="text" placeholder="Full Name" required />
+              <input type="text" placeholder="Company Name" />
             </div>
 
             <div className="form-row">
-              <div className="form-group">
-                <input type="email" placeholder="Email Address" required />
-              </div>
-              <div className="form-group">
-                <input type="tel" placeholder="Phone Number" />
-              </div>
+              <input type="email" placeholder="Email Address" required />
+              <input type="tel" placeholder="Phone Number" />
             </div>
 
-            <div className="form-group">
-              <textarea placeholder="Detailed Requirements / Budget" rows="4" />
-            </div>
+            <textarea placeholder="Detailed Requirements / Budget" rows="5" />
 
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="btn-primary ">
               Submit Inquiry
             </button>
           </form>
         </div>
 
         {/* Right: Details */}
-        <div className="contact-details-section">
+        <div className="contact-card contact-details-section">
           <h2 className="section-title">Contact Details</h2>
 
           <div className="contact-info-list">
@@ -62,11 +60,7 @@ export const ContactUs = () => {
               </div>
               <div className="info-content">
                 <h3>Address</h3>
-                <p>
-                  123 Corporate Lane, Business District
-                  <br />
-                  Mumbai, India
-                </p>
+                <p>123 Corporate Lane, Business District, Mumbai, India</p>
               </div>
             </div>
 
@@ -105,10 +99,12 @@ export const ContactUs = () => {
 
       {/* Map */}
       <div className="find_us_on_map">
-        <h2>Find Us on the Map</h2>
+        <img src="/assets/contact/map_triangle_image.png" alt="" className="map-tirangle-image" />
+        <img src="/assets/contact/map_circle_image.png" alt="" className="map-circle-image" />
+        {/* <img src="/assets/contact/map_bottom_image.png" alt="" className="map-bottom-image" /> */}
 
-        <div className="embed-map-responsive">
-          <div className="embed-map-container">
+        <h2>Find Us on the Map</h2>
+          <div className="map-wrapper">
             <iframe
               title="Company Location"
               className="embed-map-frame"
@@ -120,11 +116,11 @@ export const ContactUs = () => {
               aria-label="Google Map Location"
             />
           </div>
-        </div>
       </div>
+
+      {/* Bottom Banner */}
       <div className="printing_service">
-        <p>Need signage or printing services?</p>
-        <span>Contact us for premium, customized solutions.</span>
+        <p>Need signage or printing services? | <span>Contact us for premium, customized solutions.</span></p>
       </div>
     </div>
   );
