@@ -619,10 +619,7 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  justify-content: center;
-  scroll-snap-type: x mandatory; 
-  display: flex;
-  justify-content: flex-start;
+  scroll-snap-type: x mandatory;
   display: flex;
   justify-content: center;
 }
@@ -1225,7 +1222,8 @@
   cursor: grab;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 
