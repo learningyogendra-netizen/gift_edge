@@ -1,24 +1,51 @@
+.product-banner {
+    background-color: #1c1c1c;
+    padding: 5%;
+}
+
+.product-banner h1 {
+    color: var(--bg-white);
+    font-size: clamp(2.1rem, 5vw, 4.5rem);
+    line-height: clamp(2.5rem, 5.5vw, 4.5rem);
+    position: relative;
+    padding-bottom: 20px;
+
+}
+
+.product-section-left-image{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+.product-banner h1::before {
+    content: '';
+    position: absolute;
+    width: 7%;
+    height: 5px;
+    background-color: var(--color-gold-primary);
+    bottom: -5px;
+    left: 0%;
+}
+
 .product-page-wrapper {
     background-color: #111;
     min-height: 100vh;
 }
 
 .product-detail-page {
-    /* removed background color and min-height as they are now on wrapper */
     color: #fff;
-    font-family: 'Inter', sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 2rem;
     position: relative;
     overflow: hidden;
+    padding: 2% 5%;
 }
 
 /* Features Section */
 .features-section {
     background-color: #0d0d0d;
-    /* Slightly darker or different shade */
     padding: 4rem 2rem;
     text-align: center;
     color: #fff;
@@ -93,18 +120,13 @@
 
 /* Related Products Section */
 .related-products-section {
-    padding: 4rem 2rem;
+
     background-color: #111;
     text-align: center;
+    padding: 2% 5%;
+    border-top: 2px solid #d4af37;
 }
 
-.centered-line {
-    margin: 0 auto 2rem;
-    width: 100%;
-    max-width: 1200px;
-    height: 1px;
-    background-color: #d4af37;
-}
 
 .related-title {
     color: #d4af37;
@@ -115,10 +137,9 @@
 
 .related-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: center;
 }
 
 .related-card {
@@ -179,7 +200,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    max-width: 1200px;
     width: 100%;
     z-index: 1;
 }
@@ -251,20 +271,14 @@
 }
 
 .product-title {
-    font-family: 'Playfair Display', serif;
-    /* Assuming a serif font is available or similar */
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    color: #fff;
+    font-size: clamp(1.5em, 3vw, 3rem);
+    position: relative;
 }
 
 .product-description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ccc;
-    margin-bottom: 2.5rem;
-    max-width: 90%;
+    margin-top: 2.5rem;
+    color: var(--bg-white);
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
 }
 
 .customization-box {
@@ -306,6 +320,7 @@
 
 /* Details Section */
 .product-details-box {
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -314,6 +329,14 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 600;
+}
+
+.section-title::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    background-color: #d4af37;
+    margin-bottom: 2rem;
 }
 
 .details-list {
@@ -367,7 +390,7 @@
     height: 12px;
     background-color: #d4af37;
     margin: 0 10px;
-    transform: rotate(45deg);
+    /* transform: rotate(45deg); */
 }
 
 .starting-from {
@@ -384,7 +407,7 @@
 }
 
 .price-amount {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: 700;
     color: #d4af37;
     font-family: 'Inter', sans-serif;
@@ -420,6 +443,7 @@
 }
 
 .quote-note {
+    margin-top: 1rem;
     font-size: 0.9rem;
     color: #888;
     max-width: 400px;

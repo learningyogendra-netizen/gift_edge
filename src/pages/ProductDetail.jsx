@@ -56,7 +56,11 @@ function ProductDetail() {
         return <div className="product-detail-page"><h2>Product not found</h2></div>
     }
 
-    return (
+    return (<>
+        <div className="product-banner">
+            <span><img src="/assets/home/category_dots.png" alt="" className='product-section-left-image' /></span>
+            <h1>Exquisite Premium Festive Hamper</h1>
+        </div>
         <div className="product-page-wrapper">
             <div className="product-detail-page">
                 <div className="product-detail-container">
@@ -82,9 +86,6 @@ function ProductDetail() {
                     <div className="product-info-section">
                         <div className="section-decoration-line"></div>
                         <h1 className="product-title">{product.name}</h1>
-                        <p className="product-subtitle" style={{ color: '#d4af37', fontSize: '1.2rem', marginBottom: '1rem' }}>
-                            {product.subtitle}
-                        </p>
                         <p className="product-description">
                             {product.description}
                         </p>
@@ -117,7 +118,7 @@ function ProductDetail() {
                                 <span className="price-note">{product.priceRange.note}</span>
                             </div>
 
-                            <button className="quote-button">
+                            <button className="btn-primary">
                                 Request a Quote <span className="arrow-icon">↗</span>
                             </button>
 
@@ -151,7 +152,6 @@ function ProductDetail() {
 
             {/* Related Products Section */}
             <div className="related-products-section">
-                <div className="section-decoration-line centered-line"></div>
                 <h2 className="related-title">You May Also Like</h2>
                 <div className="related-grid">
                     {products.filter(p => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4).map((related) => (
@@ -168,6 +168,7 @@ function ProductDetail() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

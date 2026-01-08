@@ -1,34 +1,63 @@
 /* Basic Layout */
 .collection-container {
     display: flex;
-    margin: 50px auto;
-    padding: 0 5%;
+    padding: 80px auto;
+    padding: 0 5% 0 0;
     gap: 40px;
     color: var(--bg-white);
+    position: relative;
+    padding-bottom: 5%;
 
 }
 
-.collection-banner{
+.bottom-design {
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.collection-section-left-image {
+    position: absolute;
+    top: -4%;
+    left: 5;
+    z-index: -1;
+}
+
+.collection-banner {
     padding: 5%;
     position: relative;
 }
-.top-design{
+
+.collection-banner-section-left-image {
     position: absolute;
-    top:-10%;
+    bottom: 5%;
+    right: 15%;
+}
+
+.collection-section-bottom-right-image {
+    position: absolute;
+    bottom: 0%;
+    right: 5%;
+}
+
+.top-design {
+    position: absolute;
+    top: -10%;
     right: 0;
     z-index: -1;
 }
 
 
-.collection-banner h1{
+.collection-banner h1 {
     color: var(--bg-white);
     font-size: clamp(2.1rem, 5vw, 4.5rem);
     line-height: clamp(2.5rem, 5.5vw, 4.5rem);
     position: relative;
-    padding-bottom:20px ;
+    padding-bottom: 20px;
 }
 
-.collection-banner h1::before{
+.collection-banner h1::before {
     content: '';
     position: absolute;
     width: 7%;
@@ -38,22 +67,24 @@
     left: 0%;
 }
 
-.collection-banner p{
+.collection-banner p {
     padding-top: 2rem;
 }
 
-.collection-banner span{
+.collection-banner span {
     color: var(--color-grey-primary);
     font-size: clamp(0.8rem, 2vw, 1rem);
 
 
 }
 
+
+
 /* Sidebar Styles */
 .filter-sidebar {
     width: 350px;
     flex-shrink: 0;
-    border-top:  var(--color-gold-primary) 2.5px solid;
+    border-top: var(--color-gold-primary) 2.5px solid;
     padding: 20px;
     border-radius: 12px;
 }
@@ -78,7 +109,7 @@
 
 .filter-group {
     margin-bottom: 30px;
-    
+
 }
 
 .filter-group h3 {
@@ -212,6 +243,7 @@
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
 }
 
 .collection-card:hover {
@@ -246,7 +278,6 @@
     font-family: var(--font-heading);
     font-size: 1.3rem;
     margin-bottom: 8px;
-    color: var(--color-black-primary);
 }
 
 .card-details .subtitle {
@@ -280,6 +311,10 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: color 0.3s;
+}
+
+.view-link {
+    text-decoration: none;
 }
 
 .card-details .view-link:hover {
@@ -383,5 +418,68 @@
 
     .collection-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Filter Bar & Custom Toggle - Added at end for specificity */
+@media screen and (max-width: 768px) {
+    .mobile-filter-bar {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .filter-toggle-custom {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        border-top: 1px solid var(--color-gold-primary);
+        border-radius: 8px;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--color-gold-primary);
+        font-family: var(--font-primary);
+        font-size: 1.1rem;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Top gold line effect */
+    .filter-toggle-custom::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 2px;
+        opacity: 0.8;
+    }
+
+    .diamond-arrow {
+
+        background: rgba(255, 255, 255, 0.05);
+        transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .diamond-arrow svg {
+        transform: rotate(-45deg);
+        width: 12px;
+        height: auto;
+    }
+
+
+}
+
+/* Hide on desktop */
+@media screen and (min-width: 769px) {
+    .mobile-filter-bar {
+        display: none;
     }
 }
