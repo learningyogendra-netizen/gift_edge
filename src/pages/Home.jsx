@@ -387,11 +387,11 @@ export default function Home() {
 
           <div className="logo-marquee">
             <div className="logo-track">
-              <div className="logo-card"> <img src="/assets/home/img-3.png" /></div>
-              <div className="logo-card"><img src="/assets/home/img-3.png" /></div>
-              <div className="logo-card"><img src="/assets/home/img-3.png" /></div>
-              <div className="logo-card"><img src="/assets/home/img-3.png" /></div>
-              <div className="logo-card"><img src="/assets/home/img-3.png" /></div>
+              <div className="logo-card"> <img src="/assets/home/brand_1.png" /></div>
+              <div className="logo-card"><img src="/assets/home/brand_2.png" /></div>
+              <div className="logo-card"><img src="/assets/home/brand_3.png" /></div>
+              <div className="logo-card"><img src="/assets/home/brand_4.png" /></div>
+              <div className="logo-card"><img src="/assets/home/brand_5.png" /></div>
             </div>
           </div>
 

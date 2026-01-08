@@ -44,7 +44,7 @@ export const ContactUs = () => {
           transition={{ duration: 0.6 }}
           className="contact-card contact-form-section"
         >
-          <h2 className="section-title">Send Us Your Inquiry</h2>
+          <h2 className="contact-section-title">Send Us Your Inquiry</h2>
           <form className="contact-form">
             <div className="form-row">
               <input type="text" placeholder="Full Name" required />
@@ -72,7 +72,7 @@ export const ContactUs = () => {
           transition={{ duration: 0.6 }}
           className="contact-card contact-details-section"
         >
-          <h2 className="section-title">Contact Details</h2>
+          <h2 className="contact-section-title">Contact Details</h2>
 
           <div className="contact-info-list">
             {[

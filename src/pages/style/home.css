@@ -119,18 +119,19 @@
 .section-title {
   text-align: center;
   padding-bottom: 20px;
+  /* font-size: 36px; */
 }
 
 .section-title, .solution-section-title{
-  font-size: clamp(1.5em, 3vw, 3rem);
-  color: #FAE898;
+  font-size: clamp(1.5em, 3vw, 3rem) !important;
+  color: #FAE898 !important;
   position: relative;
 }
 
 .section-title::before{
   content: "";
   position: absolute;
-  top: 35px;
+  top: 80px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 5% !important;
@@ -186,6 +187,7 @@
   font-weight: 600;
   color: #111827;
   margin-bottom: 0.75rem;
+  font-family: var(--font-heading);
 }
 
 .card-content p {
@@ -196,18 +198,19 @@
 }
 
 .btn-view-collection {
-  background: #facc15;
-  color: #111827;
+  background: #FFD700;
+  color: #2C2C2C;
   border: none;
   padding: 10px 18px;
   border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   transition: background 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
 }
 
 .carousel-nav {
@@ -428,6 +431,14 @@
   .why_choose_us-container {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .section-title::before {
+    top: 60px;
+  }
+
+  .seasonal-scroll {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -459,6 +470,18 @@
     max-width: 45%;
   }
 
+  .seasonal-scroll {
+    justify-content: flex-start;
+  }
+
+  .solution-section-left-image {
+    left: -10%;
+  }
+
+  .solution-section-circle-image {
+    right: 3%;
+    width: 50px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -481,6 +504,14 @@
   .testimonial-card {
     flex: 0 0 85%;
     max-width: 85%;
+  }
+
+  .solution-section-left-image {
+    left: -15%;
+  }
+
+  .why_choose_us-section-circle-image {
+    display: none;
   }
 
   /* .nav-btn {
@@ -1055,6 +1086,13 @@
   .corporate-container {
     gap: 40px;
   }
+
+  .section-title::before {
+    top: 50px;
+  }
+    .seasonal-scroll {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1123,6 +1161,10 @@
 
   .testimonial-wrapper {
     padding: 20px 10px;
+  }
+
+  .section-title::before {
+    top: 50px;
   }
 }
 
@@ -1422,6 +1464,10 @@
   
   .seasonal-card img {
     height: 300px;
+  }
+
+  .seasonal-scroll {
+    justify-content: flex-start;
   }
 }
 

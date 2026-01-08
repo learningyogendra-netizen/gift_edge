@@ -45,7 +45,7 @@
 }
 
 .about_us_story {
-    padding: 0 5%;
+    padding: 5% 5%;
 }
 
 .about_us_story h3 {
@@ -53,7 +53,7 @@
     font-family: var(--font-heading);
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: var(--color-gold-primary);
+    color: var(--bg-white);
 }
 
 .about_us_story_content {
@@ -109,6 +109,12 @@
     background-color: var(--color-black-secondary);
     padding: 80px 10%;
     text-align: center;
+}
+
+.about_us_why_choose h3 {
+  font-size: 36px;
+  font-family: var(--font-heading);
+  color: #fff;
 }
 
 .about_us_why_choose_left_image {
@@ -177,9 +183,16 @@
 }
 
 .about_us_why_choose_content_item h4 {
-    font-family: var(--font-heading);
-    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
     color: var(--bg-white);
+}
+
+.about_us_why_choose_content_item p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #9CA3AF;
 }
 
 .about_achivement {
@@ -191,7 +204,29 @@
 .about_achivement_content {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     text-align: center;
+    padding: 40px 0;
+}
+
+.about_achivement_content > div {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The Vertical Line */
+.about_achivement_content > div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px; 
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.2); 
 }
 
 .about_achivement_content div img {
@@ -202,12 +237,18 @@
 .about_achivement_content p {
     font-size: 2.5rem;
     font-weight: 800;
+    margin: 10px 0 5px;
+    color: var(--color-black-primary);
 }
 
 .about_achivement_content span {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-black-secondary);
 }
 
 .team-section {
@@ -224,6 +265,7 @@
 .team-title {
   font-size: 36px;
   margin-bottom: 70px;
+  font-family: var(--font-heading);
 }
 
 /* GRID */
@@ -246,13 +288,16 @@
 }
 
 .team-member h3 {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 600;
   margin-bottom: 6px;
+  color: #fff;
 }
 
 .team-member p {
-  font-size: 14px;
-  color: #bfbfbf;
+  font-size: 16px;
+  font-weight: 400;
+  color: #9CA3AF;
 }
 
 /* QUOTE */
@@ -389,5 +434,21 @@
 
     .about_us_why_choose_right_image {
         width: 200px;
+    }
+
+
+    .about_achivement_content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about_achivement_content > div:not(:last-child)::after {
+        display: none;
+    }
+    
+    .about_achivement_content > div:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 20px;
+        width: 80%;
     }
 }

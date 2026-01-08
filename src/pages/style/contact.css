@@ -112,10 +112,11 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.section-title {
-    color: var(--color-gold-primary);
+.contact-section-title {
+    color: #D4AF37;
     font-family: var(--font-heading);
-    font-size: 36px;
+    font-size: 30px;
+    font-weight: 700;
     margin-bottom: 2rem;
 }
 
@@ -143,9 +144,10 @@
     border: 1px solid #D4AF3766;
     border-radius: 6px;
     padding: 1rem;
-    color: #FFFFFF;
+    color: #ADAEBC;
     font-size: 1rem;
     outline: none;
+    font-family: var(--font-primary);
     transition: background-color 0.3s ease;
 }
 
@@ -236,6 +238,9 @@
 .find_us_on_map h2 {
     color: var(--color-gold-primary);
     margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: var(--font-heading);
 }
 
 .map-wrapper {

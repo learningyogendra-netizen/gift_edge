@@ -1,13 +1,11 @@
 /* Basic Layout */
 .collection-container {
     display: flex;
-    padding: 80px auto;
     padding: 0 5% 0 0;
-    gap: 40px;
+    gap: 20px;
     color: var(--bg-white);
     position: relative;
     padding-bottom: 5%;
-
 }
 
 .bottom-design {
@@ -236,6 +234,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    align-items: stretch; /* Cards in the same row will match height */
+}
+
+.collection-grid > div {
+    display: flex;
 }
 
 .collection-card {
@@ -244,6 +247,8 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
+    flex-direction: column;
+    width: 100%;
 }
 
 .collection-card:hover {
@@ -254,6 +259,7 @@
 .card-image {
     height: 250px;
     overflow: hidden;
+    border-radius: 12px 12px 0 0;
     background: #f0f0f0;
 }
 
@@ -271,7 +277,11 @@
 .card-details {
     padding: 20px;
     text-align: left;
+    border-radius: 0 0 12px 12px;
+    background-color: var(--bg-white);
     color: var(--color-black-secondary);
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .card-details h3 {
@@ -311,6 +321,7 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: color 0.3s;
+    margin-top: auto;
 }
 
 .view-link {
@@ -363,16 +374,22 @@
 
 
 /* Responsive Styles */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
     .collection-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .collection-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
 @media screen and (max-width: 768px) {
     .collection-container {
         flex-direction: column;
-        padding: 0 15px;
+        padding: 15px 15px;
     }
 
     .filter-sidebar {
@@ -480,6 +497,12 @@
 /* Hide on desktop */
 @media screen and (min-width: 769px) {
     .mobile-filter-bar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .collection-section-bottom-right-image {
         display: none;
     }
 }
