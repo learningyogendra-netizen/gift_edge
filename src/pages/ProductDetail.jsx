@@ -80,6 +80,7 @@ function ProductDetail() {
                                         onClick={() => setSelectedImage(img)}
                                     />
                                 ))}
+                            <span><img src="/assets/product/heart.png" alt="" className='product-heart' /></span>
                             </div>
                         )}
                     </div>
@@ -129,6 +130,7 @@ function ProductDetail() {
                     </div>
                     <div className="circle-decoration"></div>
                     <div className="triangle-decoration"></div>
+                    <span><img src="/assets/home/category_blob.png" alt="" className='product-section-image' /></span>
                 </div>
             </div>
 

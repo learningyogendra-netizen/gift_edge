@@ -130,6 +130,8 @@
     border-radius: 4px 0 0 4px;
     outline: none;
     font-family: inherit;
+    width: 158px;
+    ;
 }
 
 .subscribe-btn {

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import './style/home.css';
 
@@ -148,8 +147,12 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <button className="btn-primary">Explore Our Collections</button>
-            <button className="btn-secondary">Learn About Custom Branding</button>
+            <button className="btn-primary" onClick={() => window.location.href='/collection'}>
+              Explore Our Collections
+            </button>
+            <button className="btn-secondary" onClick={() => window.location.href='/about'}>
+              Learn About Custom Branding
+            </button>
           </div>
         </div>
       </header>
@@ -173,7 +176,7 @@ export default function Home() {
                 <div className="card-content">
                   <h3>{cat.title}</h3>
                   <p>{cat.description}</p>
-                  <button className="btn-view-collection">
+                  <button className="btn-view-collection" onClick={() => window.location.href='/collection'}>
                     View Collection <span className="arrow">→</span>
                   </button>
                 </div>

@@ -43,6 +43,18 @@
     padding: 2% 5%;
 }
 
+.product-heart{
+    position: absolute;
+    bottom: 20%;
+    left: 30%;
+    transform: rotate(180deg);
+}
+.product-section-image{
+    position: absolute;
+    right: -5%;
+    transform: rotate(90deg);
+    bottom: 20%;
+}
 /* Features Section */
 .features-section {
     background-color: #0d0d0d;
