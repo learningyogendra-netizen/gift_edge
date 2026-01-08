@@ -210,6 +210,151 @@
     letter-spacing: 1px;
 }
 
+.team-section {
+  background: black;
+  padding: 100px 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: "Georgia", serif;
+}
+
+/* TITLE */
+.team-title {
+  font-size: 36px;
+  margin-bottom: 70px;
+}
+
+/* GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* MEMBER */
+.team-member img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  margin-bottom: 18px;
+}
+
+.team-member h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: #bfbfbf;
+}
+
+/* QUOTE */
+.team-quote {
+  max-width: 800px;
+  margin: 90px auto 0;
+  position: relative;
+}
+
+.team-quote p {
+  font-size: 18px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 22px 0;
+}
+
+.team-quote .line {
+  width: 60px;
+  height: 2px;
+  background: #d4af37;
+  display: block;
+  margin: auto;
+}
+
+.right-polygon{
+  position: absolute;
+  width: 60px;
+  top: 4%;
+  right: 20%;
+}
+
+.right-polygonFrame9{
+  position: absolute;
+  width: 160px;
+  top: 15%;
+  right: 2%;
+}
+
+.left-cirlce{
+  position: absolute;
+  width: 120px;
+  left: 0%;
+  top: 55%;
+}
+
+.bottom-vector-img{
+  position: absolute;
+  width: 220px;
+  left: 10%;
+  bottom: 1%;
+}
+
+.right-vector-img{
+  position: absolute;
+  width: 200px;
+  top: 50%;
+  right: -5%;
+}
+
+.team-section::before {
+  top: 60px;
+  right: 80px;
+}
+
+.team-section::after {
+  bottom: 120px;
+  left: 60px;
+}
+
+.team-quote-text{
+    font-size: clamp(1.8rem, 3vw, 3.2rem);
+    font-family: var(--font-heading);
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-title {
+    font-size: 26px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-quote p {
+    font-size: 16px;
+  }
+}
+
+
 @media (max-width: 992px) {
     .about_us_story_content, 
     .about_us_why_choose_content {
