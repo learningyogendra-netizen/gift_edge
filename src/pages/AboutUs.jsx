@@ -69,6 +69,52 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+
+        <section className="team-section">
+          <img src="/assets/about/Polygon 3-1.png" className="right-polygon" alt="Polygon-3.1" />
+          <img src="/assets/about/Frame-9.png" className="right-polygonFrame9" alt="Frame-9" />
+          <img src="/assets/about/div-13.png" className="left-cirlce" alt="Cirlce" />
+          <img src="/assets/about/Vector 2-1.png" className="bottom-vector-img" alt="Bottom Vector" />
+          <img src="/assets/about/Vector.png" className="right-vector-img" alt="Right Vector" />
+
+
+          <h2 className="team-title">Meet Our Team</h2>
+
+          <div className="team-grid">
+            <div className="team-member">
+              <img src="/assets/about/img-17.png" alt="Sarah Chen" />
+              <h3>Sarah Chen</h3>
+              <p>Founder & CEO</p>
+            </div>
+
+            <div className="team-member">
+              <img src="/assets/about/img-18.png" alt="Michael Ross" />
+              <h3>Michael Ross</h3>
+              <p>Creative Director</p>
+            </div>
+
+            <div className="team-member">
+              <img src="/assets/about/img-19.png" alt="Emma Taylor" />
+              <h3>Emma Taylor</h3>
+              <p>Operations Manager</p>
+            </div>
+
+            <div className="team-member">
+              <img src="/assets/about/img-20.png" alt="David Kumar" />
+              <h3>David Kumar</h3>
+              <p>Client Relations</p>
+            </div>
+          </div>
+
+          <div className="team-quote">
+            <span className="line"></span>
+            <p className="team-quote-text">
+              "At GiftEdge, every gift is crafted to reflect care, celebration,
+              and connection."
+            </p>
+            <span className="line"></span>
+          </div>
+        </section>
       </div>
     </>
   );
