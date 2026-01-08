@@ -617,16 +617,30 @@
   position: relative;
   margin-bottom: 60px;
   display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
   justify-content: center;
+  scroll-snap-type: x mandatory; 
+  display: flex;
+  justify-content: flex-start;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-marquee::-webkit-scrollbar {
+  display: none;
 }
 
 .logo-track {
   display: flex;
   gap: 24px;
   width: max-content;
+  padding: 0 5%;
 }
 
 .logo-card {
+  flex: 0 0 120px;
+  scroll-snap-align: center;
   position: relative;
   min-width: 70px;
   height: 100px;
@@ -921,6 +935,15 @@
   .nav-btn.right {
     right: 5px;
   }
+
+  .logo-card {
+    flex: 0 0 140px; 
+    height: 90px;
+  }
+
+  .logo-track {
+    gap: 15px;
+  }
 }
 
 
@@ -1070,6 +1093,39 @@
   .testimonial-viewport {
     width: 100%;
     overflow: hidden;
+  }
+
+  .trust-section-right-imgVector14,
+  .trust-section-right-imgVector13,
+  .trust-section-left-imgGroup1,
+  .trust-section-circle-img {
+    width: 0;
+  }
+
+  .logo-marquee {
+    justify-content: flex-start; 
+  }
+
+  .logo-track {
+    max-width: none; 
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .logo-card {
+    flex: 0 0 100px;
+    height: 85px;
+  }
+
+  .nav-btn {
+    background: rgba(44, 44, 44, 0.8); 
+    width: 40px;
+    height: 40px;
+    z-index: 30;
+  }
+
+  .testimonial-wrapper {
+    padding: 20px 10px;
   }
 }
 
