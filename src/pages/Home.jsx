@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import './style/home.css';
 
 const CATEGORIES = [
@@ -95,7 +96,7 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const visibleCategories = CATEGORIES.slice(currentIndex, currentIndex + 3);
- 
+
   const VISIBLE_COUNT = 3;
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
@@ -128,7 +129,10 @@ export default function Home() {
       {/* hero section  */}
       <header className="hero">
         <div className="hero-bg">
-          <img
+          <motion.img
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5 }}
             src="/assets/home/hero.png"
             alt="Luxury Gifts"
             className="hero-image"
@@ -137,23 +141,38 @@ export default function Home() {
         </div>
 
         <div className="hero-content">
-          <h1 className="hero-title">
+          <motion.h1
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="hero-title"
+          >
             Elevate Your Corporate <br />
             Gifting Experience
-          </h1>
+          </motion.h1>
 
-          <p className="hero-subtitle">
+          <motion.p
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="hero-subtitle"
+          >
             Curated with unrivaled luxury and designed to delight.
-          </p>
+          </motion.p>
 
-          <div className="hero-actions">
-            <button className="btn-primary" onClick={() => window.location.href='/collection'}>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="hero-actions"
+          >
+            <button className="btn-primary" onClick={() => window.location.href = '/collection'}>
               Explore Our Collections
             </button>
-            <button className="btn-secondary" onClick={() => window.location.href='/about'}>
+            <button className="btn-secondary" onClick={() => window.location.href = '/about'}>
               Learn About Custom Branding
             </button>
-          </div>
+          </motion.div>
         </div>
       </header>
 
@@ -162,35 +181,52 @@ export default function Home() {
         <span><img src="/assets/home/category_dots.png" alt="" className='categories-section-left-image' /></span>
         <span><img src="/assets/home/category_blob.png" alt="" className='categories-section-image' /></span>
         <div>
-          <h1 className="section-title">Premium Gifting Categories</h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="section-title"
+          >
+            Premium Gifting Categories
+          </motion.h1>
         </div>
 
-        
+
         <div className="categories-container">
           <div className="categories-cards">
-            {visibleCategories.map((cat) => (
-              <div className="category-card" key={cat.id}>
+            {visibleCategories.map((cat, index) => (
+              <motion.div
+                key={cat.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+                className="category-card"
+              >
                 <div className="card-image-wrapper">
                   <img src={cat.image} alt={cat.title} />
                 </div>
                 <div className="card-content">
                   <h3>{cat.title}</h3>
                   <p>{cat.description}</p>
-                  <button className="btn-view-collection" onClick={() => window.location.href='/collection'}>
+                  <button className="btn-view-collection" onClick={() => window.location.href = '/collection'}>
                     View Collection <span className="arrow">→</span>
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           <button className="carousel-nav next" onClick={handleNext}>
             &#10095;
           </button>
-        
+
         </div>
-          
+
       </section>
+
+      {/* solutions */}
 
       {/* solutions */}
 
@@ -198,43 +234,53 @@ export default function Home() {
         <span><img src="/assets/home/circle.png" alt="" className='solution-section-circle-image' /></span>
         <span><img src="/assets/home/solution-top-design.png" alt="" className='solution-section-left-image' /></span>
         <div className="section-header">
-          <h1 className="solution-section-title">Beyond Gifting Solutions</h1>
-          <p className='solution-section-description'>Revenue extensions and comprehensive corporate services</p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="solution-section-title"
+          >
+            Beyond Gifting Solutions
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className='solution-section-description'
+          >
+            Revenue extensions and comprehensive corporate services
+          </motion.p>
         </div>
         <div className='solutions'>
-          <div className="solution-wrapper">
-            <div>
-              <img src="/assets/home/s1.png" alt="" />
-            </div>
-            <h4>Corporate Branding</h4>
-            <span>Complete brand identity solutions</span>
-          </div>
-          <div className="solution-wrapper">
-            <div>
-              <img src="/assets/home/s2.png" alt="" />
-            </div>
-            <h4>UV Printing</h4>
-            <span>High-quality custom printing</span>
-          </div>
-          <div className="solution-wrapper">
-            <div>
-              <img src="/assets/home/s3.png" alt="" />
-            </div>
-            <h4>Signage & Fabrication</h4>
-            <span>Professional display solutions</span>
-          </div>
-          <div className="solution-wrapper">
-            <div>
-              <img src="/assets/home/s4.png" alt="" />
-            </div>
-            <h4>Packaging Workshops</h4>
-            <span>Custom packaging design sessions</span>
-          </div>
+          {[
+            { img: "/assets/home/s1.png", title: "Corporate Branding", desc: "Complete brand identity solutions" },
+            { img: "/assets/home/s2.png", title: "UV Printing", desc: "High-quality custom printing" },
+            { img: "/assets/home/s3.png", title: "Signage & Fabrication", desc: "Professional display solutions" },
+            { img: "/assets/home/s4.png", title: "Packaging Workshops", desc: "Custom packaging design sessions" }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="solution-wrapper"
+            >
+              <div>
+                <img src={item.img} alt="" />
+              </div>
+              <h4>{item.title}</h4>
+              <span>{item.desc}</span>
+            </motion.div>
+          ))}
         </div>
         <div className="solution-action">
           <button className='btn-tertiary'>Explore Service</button>
         </div>
       </section>
+
+      {/* Why Choose GiftEdge ? */}
 
       {/* Why Choose GiftEdge ? */}
 
@@ -246,69 +292,79 @@ export default function Home() {
 
 
         <div className="section-header">
-          <h1 className="why_choose_us-section-title">Why Choose <span>GiftEdge ?</span></h1>
-          <p className='why_choose_us-section-description'>Delivering excellence in corporate gifting with unparalleled attention to detail</p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="why_choose_us-section-title"
+          >
+            Why Choose <span>GiftEdge ?</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className='why_choose_us-section-description'
+          >
+            Delivering excellence in corporate gifting with unparalleled attention to detail
+          </motion.p>
         </div>
 
         <div className='why_choose_us-container'>
-          <div className="why_choose_us-container-wrapper">
-            <div>
-              <img src="/assets/home/s1.png" alt="" />
-            </div>
-            <h4>Corporate Branding</h4>
-            <span>Complete brand identity solutions</span>
-          </div>
-          <div className="why_choose_us-container-wrapper">
-            <div>
-              <img src="/assets/home/s2.png" alt="" />
-            </div>
-            <h4>UV Printing</h4>
-            <span>High-quality custom printing</span>
-          </div>
-          <div className="why_choose_us-container-wrapper">
-            <div>
-              <img src="/assets/home/s3.png" alt="" />
-            </div>
-            <h4>Signage & Fabrication</h4>
-            <span>Professional display solutions</span>
-          </div>
-          <div className="why_choose_us-container-wrapper">
-            <div>
-              <img src="/assets/home/s4.png" alt="" />
-            </div>
-            <h4>Packaging Workshops</h4>
-            <span>Custom packaging design sessions</span>
-          </div>
-          <div className="why_choose_us-container-wrapper">
-            <div>
-              <img src="/assets/home/s4.png" alt="" />
-            </div>
-            <h4>Packaging Workshops</h4>
-            <span>Custom packaging design sessions</span>
-          </div>
-          <div className="why_choose_us-container-wrapper">
-            <div>
-              <img src="/assets/home/s4.png" alt="" />
-            </div>
-            <h4>Packaging Workshops</h4>
-            <span>Custom packaging design sessions</span>
-          </div>
+          {[
+            { img: "/assets/home/s1.png", title: "Corporate Branding", desc: "Complete brand identity solutions" },
+            { img: "/assets/home/s2.png", title: "UV Printing", desc: "High-quality custom printing" },
+            { img: "/assets/home/s3.png", title: "Signage & Fabrication", desc: "Professional display solutions" },
+            { img: "/assets/home/s4.png", title: "Packaging Workshops", desc: "Custom packaging design sessions" },
+            { img: "/assets/home/s4.png", title: "Packaging Workshops", desc: "Custom packaging design sessions" },
+            { img: "/assets/home/s4.png", title: "Packaging Workshops", desc: "Custom packaging design sessions" }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05, duration: 0.4 }}
+              className="why_choose_us-container-wrapper"
+            >
+              <div>
+                <img src={item.img} alt="" />
+              </div>
+              <h4>{item.title}</h4>
+              <span>{item.desc}</span>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* Our Work  */}
       <section className="our_work_section">
         <div className="section-header">
-          <h1 className="our_work_section-title">Our Work</h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="our_work_section-title"
+          >
+            Our Work
+          </motion.h1>
         </div>
 
         <div className="our-work-grid">
-          {OURWORKS.map((work) => (
-            <div className="our-work-card" key={work.id}>
+          {OURWORKS.map((work, index) => (
+            <motion.div
+              key={work.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2, duration: 0.5 }}
+              className="our-work-card"
+            >
               <img src={work.image} alt={work.title} />
               <div className="play-btn"></div>
               <div className="work-title">{work.title}</div>
-            </div>  
+            </motion.div>
           ))}
         </div>
       </section>
@@ -361,37 +417,47 @@ export default function Home() {
         {/* <img src="/assets/home/circle.png" className="client-section" alt="right-circle" /> */}
         <img src="/assets/home/Frame-7.png" className="client-section-right-triangle" alt="right-triangle" />
 
-        <h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
           What Our <span>Clients</span> Say
-        </h2>
+        </motion.h2>
         <div className="underline"></div>
 
         <div className="testimonial-wrapper">
-            <button className="nav-btn left" onClick={prevTestimonial}>‹</button>
+          <button className="nav-btn left" onClick={prevTestimonial}>‹</button>
 
-            <div className="testimonial-viewport">
-              <div className="testimonial-cards">
-                {visibleClientReviews.map((review) => (
-                  <div className="testimonial-card" key={review.id}>
-                    <div className="video-box">
-                      <img src={review.clientImage} alt="Client" />
-                      <span className="client-playBtn"></span>
-                    </div>
-
-                    <div className="card-content">
-                      <div className="client-info">
-                        <img src={review.avatarImage} alt="Avatar" />
-                        <div>
-                          <h4>{review.name}</h4>
-                          <p>{review.desgnation}</p>
-                        </div>
-                      </div>
-                      <p className="quote">{review.quote}</p>
-                    </div>
+          <div className="testimonial-viewport">
+            <div className="testimonial-cards">
+              {visibleClientReviews.map((review) => (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="testimonial-card"
+                  key={review.id}
+                >
+                  <div className="video-box">
+                    <img src={review.clientImage} alt="Client" />
+                    <span className="client-playBtn"></span>
                   </div>
-                ))}
-              </div>
+
+                  <div className="card-content">
+                    <div className="client-info">
+                      <img src={review.avatarImage} alt="Avatar" />
+                      <div>
+                        <h4>{review.name}</h4>
+                        <p>{review.desgnation}</p>
+                      </div>
+                    </div>
+                    <p className="quote">{review.quote}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
+          </div>
           <button className="nav-btn right" onClick={nextTestimonial}>›</button>
         </div>
       </section>
@@ -423,56 +489,52 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
 
       {/* Seasonal Section */}
       <section className="seasonal-section">
         <img src="/assets/home/Vector 17.png" className="seasonal-left-vector17" alt="left-vector17" />
         <img src="/assets/home/circle.png" className="seasonal-left-circle" alt="left-circle" />
         <img src="/assets/home/Vector.png" className="seasonal-right-vector" alt="right-vector" />
-        
+
         <div className="seasonal-header">
-          <h2>Featured Seasonal Collection</h2>
-          <p>Handcrafted luxury sets for this season</p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >Featured Seasonal Collection</motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >Handcrafted luxury sets for this season</motion.p>
         </div>
-                
+
         <div className='seasonal-scroll'>
           <div className="seasonal-track">
-            <div className="seasonal-card">
-              <img src="/assets/home/hero.png" alt="Winter Elegance" />
-              <div className="seasonal-content">
-                <h4>Winter Elegance</h4>
-                <p>Premium winter collection with artisanal touches</p>
-                <span className="price">From $125</span>
-              </div>
-            </div>
-
-            <div className="seasonal-card">
-              <img src="/assets/home/hero.png" alt="Holiday Celebration" />
-              <div className="seasonal-content">
-                <h4>Holiday Celebration</h4>
-                <p>Festive collection for year-end appreciation</p>
-                <span className="price">From $95</span>
-              </div>
-            </div>
-
-            <div className="seasonal-card">
-              <img src="/assets/home/hero.png" alt="Wellness Retreat" />
-              <div className="seasonal-content">
-                <h4>Wellness Retreat</h4>
-                <p>Self-care essentials for employee wellbeing</p>
-                <span className="price">From $85</span>
-              </div>
-            </div>
-
-            <div className="seasonal-card">
-              <img src="/assets/home/hero.png" alt="Executive Suite" />
-              <div className="seasonal-content">
-                <h4>Executive Suite</h4>
-                <p>Sophisticated gifts for leadership teams</p>
-                <span className="price">From $200</span>
-              </div>
-            </div> 
+            {[
+              { title: "Winter Elegance", desc: "Premium winter collection with artisanal touches", price: "From $125" },
+              { title: "Holiday Celebration", desc: "Festive collection for year-end appreciation", price: "From $95" },
+              { title: "Wellness Retreat", desc: "Self-care essentials for employee wellbeing", price: "From $85" },
+              { title: "Executive Suite", desc: "Sophisticated gifts for leadership teams", price: "From $200" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+                className="seasonal-card"
+              >
+                <img src="/assets/home/hero.png" alt={item.title} />
+                <div className="seasonal-content">
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                  <span className="price">{item.price}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

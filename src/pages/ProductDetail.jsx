@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faStar, faGift, faBuilding, faUsers, faTruck, faBox, faUser, faMicrochip, faHeart, faGem, faAward, faBolt, faSmile, faMusic, faLeaf, faSun, faCalendar, faDroplet, faGlobe, faCoffee, faCheck, faUserPlus, faPlane, faWifi, faCloudRain, faRecycle, faCheckCircle
 } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
 const iconMapping = {
     "star": faStar,
@@ -59,14 +60,29 @@ function ProductDetail() {
     return (<>
         <div className="product-banner">
             <span><img src="/assets/home/category_dots.png" alt="" className='product-section-left-image' /></span>
-            <h1>Exquisite Premium Festive Hamper</h1>
+            <motion.h1
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+            >Exquisite Premium Festive Hamper</motion.h1>
         </div>
         <div className="product-page-wrapper">
             <div className="product-detail-page">
                 <div className="product-detail-container">
-                    <div className="product-image-section">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        className="product-image-section"
+                    >
                         <div className="main-image-container">
-                            <img src={selectedImage} alt={product.name} className="main-image" />
+                            <motion.img
+                                key={selectedImage}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.5 }}
+                                src={selectedImage} alt={product.name} className="main-image"
+                            />
                             <div className="corner-decoration top-left"></div>
                         </div>
                         {product.images.length > 1 && (
@@ -80,11 +96,16 @@ function ProductDetail() {
                                         onClick={() => setSelectedImage(img)}
                                     />
                                 ))}
-                            <span><img src="/assets/product/heart.png" alt="" className='product-heart' /></span>
+                                <span><img src="/assets/product/heart.png" alt="" className='product-heart' /></span>
                             </div>
                         )}
-                    </div>
-                    <div className="product-info-section">
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="product-info-section"
+                    >
                         <div className="section-decoration-line"></div>
                         <h1 className="product-title">{product.name}</h1>
                         <p className="product-description">
@@ -127,7 +148,7 @@ function ProductDetail() {
                                 Get a personalized quote based on quantity, custom branding, and packaging preferences.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                     <div className="circle-decoration"></div>
                     <div className="triangle-decoration"></div>
                     <span><img src="/assets/home/category_blob.png" alt="" className='product-section-image' /></span>
@@ -137,16 +158,34 @@ function ProductDetail() {
             {/* Why Choose This Gift Section */}
             {product.features && (
                 <div className="features-section">
-                    <h2 className="features-title">Why Choose This Gift?</h2>
-                    <p className="features-subtitle">A corporate-friendly message highlighting quality & presentation for meaningful business relationships.</p>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="features-title"
+                    >Why Choose This Gift?</motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="features-subtitle"
+                    >A corporate-friendly message highlighting quality & presentation for meaningful business relationships.</motion.p>
                     <div className="features-grid">
                         {product.features.map((feature, index) => (
-                            <div key={index} className="feature-item">
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1, duration: 0.4 }}
+                                className="feature-item"
+                            >
                                 <div className="feature-icon-circle">
                                     <FontAwesomeIcon icon={iconMapping[feature.icon] || faBox} className="feature-icon" />
                                 </div>
                                 <p className="feature-label">{feature.label}</p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
@@ -154,10 +193,23 @@ function ProductDetail() {
 
             {/* Related Products Section */}
             <div className="related-products-section">
-                <h2 className="related-title">You May Also Like</h2>
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="related-title"
+                >You May Also Like</motion.h2>
                 <div className="related-grid">
-                    {products.filter(p => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4).map((related) => (
-                        <div key={related.id} className="related-card" onClick={() => window.location.href = `/product/${related.id}`}>
+                    {products.filter(p => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4).map((related, index) => (
+                        <motion.div
+                            key={related.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.15, duration: 0.5 }}
+                            className="related-card"
+                            onClick={() => window.location.href = `/product/${related.id}`}
+                        >
                             <div className="related-image-container">
                                 <img src={related.images[0]} alt={related.name} className="related-image" />
                             </div>
@@ -165,12 +217,12 @@ function ProductDetail() {
                                 <h3 className="related-name">{related.name}</h3>
                                 <p className="related-price">Starting from {related.priceRange.currency}{related.priceRange.min}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
         </div>
-        </>
+    </>
     )
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { products } from '../data/mockData';
 import './style/collection.css';
 
@@ -138,19 +139,30 @@ export default function Collection() {
   return (
     <>
       <div className="collection-banner">
-
-         <span><img src="/assets/collection/Frame-9.png" alt="" className='collection-banner-section-left-image' /></span>
+        <span><img src="/assets/collection/Frame-9.png" alt="" className='collection-banner-section-left-image' /></span>
         <span><img src="public/assets/collection/top-design.png" alt="" className='top-design' /></span>
-        <h1>Product Categories Collections</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >Product Categories Collections</motion.h1>
 
-        <p>Explore premium gifting categories thoughtfully created for every corporate need.</p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >Explore premium gifting categories thoughtfully created for every corporate need.</motion.p>
         <br />
-        <span>A collection designed to inspire thoughtful corporate gifting — from festive hampers <br /> to bespoke curated sets tailored for rewards, recognition, and celebrations.</span>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >A collection designed to inspire thoughtful corporate gifting — from festive hampers <br /> to bespoke curated sets tailored for rewards, recognition, and celebrations.</motion.span>
       </div>
 
       <div className="collection-container">
         <span><img src="/assets/collection/Frame 5.png" alt="" className='collection-section-bottom-right-image' /></span>
-     {/* <span><img src="public/assets/collection/top-design.png" alt="" className='bottom-design' /></span> */}
+        {/* <span><img src="public/assets/collection/top-design.png" alt="" className='bottom-design' /></span> */}
         <span><img src="/assets/home/category_dots.png" alt="" className='collection-section-left-image' /></span>
         <div className={`filter-sidebar ${showMobFilter ? 'show' : ''}`}>
           <div className="filter-header">
@@ -158,7 +170,12 @@ export default function Collection() {
             <button className="close-filter" onClick={() => setShowMobFilter(false)}>×</button>
           </div>
 
-          <div className="filter-group filter-group-category">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="filter-group filter-group-category"
+          >
             <h3>Categories</h3>
             {categories.map((cat, index) => (
               <label key={index} className="checkbox-container">
@@ -172,9 +189,14 @@ export default function Collection() {
                 {cat}
               </label>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="filter-group filter-group-budget">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="filter-group filter-group-budget"
+          >
             <h3>Budget</h3>
             {budgets.map((bud, index) => (
               <label key={index} className="checkbox-container">
@@ -188,9 +210,14 @@ export default function Collection() {
                 {bud}
               </label>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="filter-group filter-group-occasion">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="filter-group filter-group-occasion"
+          >
             <h3>Occasion</h3>
             {occasions.map((occ, index) => (
               <label key={index} className="checkbox-container">
@@ -204,7 +231,7 @@ export default function Collection() {
                 {occ}
               </label>
             ))}
-          </div>
+          </motion.div>
 
           <div className="filter-actions">
             <button className="btn-primary" onClick={handleApplyFilters}>Apply Filters</button>
@@ -229,19 +256,30 @@ export default function Collection() {
           </div>
 
           <div className="collection-grid">
-            {currentProducts.map((product) => (
-              <Link key={product.id} to={`/product/${product.id}`} className="collection-card">
-                <div className="card-image">
-                  <img src={product.images[0]} alt={product.name} />
-                </div>
-                <div className="card-details">
-                  <h3>{product.name}</h3>
-                  <p className="subtitle">{product.subtitle}</p>
-  
-                  <span className="view-link">View Details →</span>
-                </div>
-              </Link>
-            ))}
+            <AnimatePresence>
+              {currentProducts.map((product) => (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  key={product.id}
+                >
+                  <Link to={`/product/${product.id}`} className="collection-card">
+                    <div className="card-image">
+                      <img src={product.images[0]} alt={product.name} />
+                    </div>
+                    <div className="card-details">
+                      <h3>{product.name}</h3>
+                      <p className="subtitle">{product.subtitle}</p>
+
+                      <span className="view-link">View Details →</span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </AnimatePresence>
             {filteredProducts.length === 0 && (
               <p className="no-results">No products found matching your filters.</p>
             )}
